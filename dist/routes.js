@@ -6,6 +6,11 @@ import controllerPedido from "./controllers/controller.pedido.js";
 import controllerUsuario from "./controllers/controller.usuario.js";
 import jwt from "./token.js";
 const router = Router();
+router.get("/", (req, res) => {
+  return res.status(200).send({
+    msg: "Api Running!!"
+  });
+});
 router.get("/categorias", jwt.ValidateJWT, controllerCategoria.Listar);
 router.get("/banners", jwt.ValidateJWT, controllerBanner.Listar);
 
